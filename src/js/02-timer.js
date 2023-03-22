@@ -55,7 +55,7 @@ const options = {
       Notify.failure('Please choose a date in the future');
       refs.startBtn.disabled = true;
     } else {
-      selectedTime = selectedDates[0];
+      //selectedTime = selectedDates[0];
       refs.startBtn.disabled = false;
       Notify.success('Valid date' )
     }
@@ -89,7 +89,7 @@ class Timer {
       const componentsTimer = convertMs(deltaTime);
 
       //*  остановили таймер очистили интервал
-      if (deltaTime <= 1000) {
+      if (deltaTime < 0) {
         clearInterval(this.timerId);
         this.stopTimer();
         return;
