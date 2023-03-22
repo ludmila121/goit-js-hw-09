@@ -68,8 +68,10 @@ class Timer {
   constructor() {
     this.timerId = null;
     this.isActive = false;
-    refs.startBtn.disabled = true;
+    // refs.startBtn.disabled = true;
+    
   }
+
 
   //*  запустили таймер
   startTimer() {
