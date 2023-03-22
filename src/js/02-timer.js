@@ -51,12 +51,13 @@ const options = {
   onClose(selectedDates) {
     selectedDate = selectedDates[0];
     
-    if (selectedDate.getTime() <= Date.now()) {
+    if (selectedDates[0].getTime() <= Date.now()) {
       Notify.failure('Please choose a date in the future');
       refs.startBtn.disabled = true;
     } else {
       selectedTime = selectedDates[0];
       refs.startBtn.disabled = false;
+      Notify.success('Valid date' )
     }
   },
 };
@@ -112,9 +113,4 @@ class Timer {
 const timer = new Timer();
 refs.startBtn.addEventListener('click', () =>  timer.startTimer());
 
-// const startTime = Date.now();
-// refs.startButton.hasAttribute('isActive') = true;
 
-// const currentTime = Date.now();
-//       const deltaTime = currentTime - startTime;
-//       const time = this.getTimeComponents(deltaTime)
